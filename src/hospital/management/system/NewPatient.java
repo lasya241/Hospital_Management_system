@@ -2,6 +2,7 @@ package hospital.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Date;
 
 public class NewPatient extends JFrame {
     JComboBox comboBox;
@@ -102,13 +103,44 @@ public class NewPatient extends JFrame {
         panel.add(labelRoom);
 
         //Room Choice//
-        JLabel labelRoom =new JLabel("Room:");
-        labelRoom.setBounds(35,274,200,14);
-        labelRoom.setFont(new Font("Tahoma",Font.BOLD,14));
-        labelRoom.setForeground(Color.white);
-        panel.add(labelRoom);
+        JLabel labelDate =new JLabel("Time:");
+        labelDate.setBounds(35,316,200,14);
+        labelDate.setFont(new Font("Tahoma",Font.BOLD,14));
+        labelDate.setForeground(Color.white);
+        panel.add(labelDate);
+
+        Date date1=new Date();
+
+        date=new JLabel(""+date1);
+        date.setBounds(271,316,250,15);
+        date.setForeground(Color.white);
+        date.setFont(new Font("Tahoma",Font.BOLD,12));
+        panel.add(date);
+
+        JLabel labelDeposite =new JLabel("Deposit:");
+        labelDeposite.setBounds(35,359,200,17);
+        labelDeposite.setFont(new Font("Tahoma",Font.BOLD,14));
+        labelDeposite.setForeground(Color.white);
+        panel.add(labelDeposite);
+
+        textFieldDeposite=new JTextField();
+        textFieldDeposite.setBounds(271,359,150,20);
+        panel.add(textFieldDeposite);
+
+        b1=new JButton("ADD");
+        b1.setBounds(100,430,120,30);
+        b1.setForeground(Color.white);
+        b1.setBackground(Color.BLACK);
+        panel.add(b1);
+
+        b2=new JButton("Back");
+        b2.setBounds(260,430,120,30);
+        b2.setForeground(Color.white);
+        b2.setBackground(Color.BLACK);
+        panel.add(b2);
 
 
+        setUndecorated(true);
         setSize(850,550);
         setLayout(null);
         setLocation(300,250);
