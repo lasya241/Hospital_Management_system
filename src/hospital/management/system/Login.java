@@ -2,8 +2,7 @@ package hospital.management.system;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.sql.ResultSet;
 
 public class Login extends JFrame implements ActionListener {
@@ -21,12 +20,10 @@ public class Login extends JFrame implements ActionListener {
         getContentPane().setBackground(new Color(109, 164, 170));
         setLayout(new GridBagLayout());
 
-
         JPanel mainPanel = new JPanel();
         mainPanel.setBackground(new Color(109, 164, 170));
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-
 
         ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("icon/login.png"));
         Image scaledImage = icon.getImage().getScaledInstance(350, 180, Image.SCALE_SMOOTH);
@@ -34,9 +31,7 @@ public class Login extends JFrame implements ActionListener {
         logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         mainPanel.add(logoLabel);
 
-
         mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
-
 
         JPanel formPanel = new JPanel(new GridBagLayout());
         formPanel.setBackground(new Color(109, 164, 170));
@@ -46,7 +41,6 @@ public class Login extends JFrame implements ActionListener {
 
         JLabel namelabel = new JLabel("Username:");
         namelabel.setFont(new Font("Tahoma", Font.BOLD, 18));
-        namelabel.setForeground(Color.BLACK);
         gbc.gridx = 0;
         gbc.gridy = 0;
         formPanel.add(namelabel, gbc);
@@ -59,7 +53,6 @@ public class Login extends JFrame implements ActionListener {
 
         JLabel password = new JLabel("Password:");
         password.setFont(new Font("Tahoma", Font.BOLD, 18));
-        password.setForeground(Color.BLACK);
         gbc.gridx = 0;
         gbc.gridy = 1;
         formPanel.add(password, gbc);
@@ -91,7 +84,6 @@ public class Login extends JFrame implements ActionListener {
 
         mainPanel.add(formPanel);
 
-
         GridBagConstraints frameGbc = new GridBagConstraints();
         frameGbc.gridx = 0;
         frameGbc.gridy = 0;
@@ -106,30 +98,27 @@ public class Login extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==b1){
-            try{
-                conn c=new conn();
-                String user=textField.getText();
-                String Pass=jPasswordField.getText();
+        if (e.getSource() == b1) {
+            try {
+                conn c = new conn();
+                String user = textField.getText();
+                String pass = new String(jPasswordField.getPassword());
 
-                String q="select * from login where ID = '"+user+"' and PW='"+Pass+"'";
+                String q = "SELECT * FROM login WHERE ID = '" + user + "' AND PW = '" + pass + "'";
                 ResultSet resultSet = c.statement.executeQuery(q);
 
-                if(resultSet.next()){
-                    new test();
+                if (resultSet.next()) {
+                    new Reception();
                     setVisible(false);
-                }else{
-                    JOptionPane.showMessageDialog(null,"Invalid");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid Username or Password");
                 }
 
-
-
-            }catch(Exception E){
-                E.printStackTrace();
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
-        }else{
-
-            System.exit(10);
+        } else if (e.getSource() == b2) {
+            System.exit(0);
         }
     }
 }

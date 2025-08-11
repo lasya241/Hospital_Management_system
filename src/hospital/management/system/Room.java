@@ -33,7 +33,7 @@ public class Room extends JFrame {
 
         try {
             conn c = new conn();
-            String q = "select * from room";
+            String q = "select * from Room";
             ResultSet resultSet = c.statement.executeQuery(q);
             table.setModel(DbUtils.resultSetToTableModel(resultSet));
         } catch (Exception e) {
