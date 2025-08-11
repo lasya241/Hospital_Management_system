@@ -15,7 +15,7 @@ public class SearchRoom extends JFrame {
     SearchRoom() {
         JPanel panel = new JPanel();
         panel.setBounds(5, 5, 690, 590);
-        panel.setBackground(new Color(90, 156, 163));
+        panel.setBackground(new Color(118, 231, 130));
         panel.setLayout(null);
         add(panel);
 
@@ -38,7 +38,7 @@ public class SearchRoom extends JFrame {
         panel.add(choice);
 
         table = new JTable();
-        table.setBackground(new Color(90, 156, 163));
+        table.setBackground(new Color(118, 231, 130));
         table.setForeground(Color.white);
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds(0, 187, 700, 210);

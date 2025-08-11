@@ -17,15 +17,15 @@ public class Login extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        getContentPane().setBackground(new Color(109, 164, 170));
+        getContentPane().setBackground(new Color(118, 231, 130));
         setLayout(new GridBagLayout());
 
         JPanel mainPanel = new JPanel();
-        mainPanel.setBackground(new Color(109, 164, 170));
+        mainPanel.setBackground(new Color(118, 231, 130));
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("icon/login.png"));
+        ImageIcon icon = new ImageIcon(ClassLoader.getSystemResource("icon/Medical center logo.png"));
         Image scaledImage = icon.getImage().getScaledInstance(350, 180, Image.SCALE_SMOOTH);
         JLabel logoLabel = new JLabel(new ImageIcon(scaledImage));
         logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -34,7 +34,7 @@ public class Login extends JFrame implements ActionListener {
         mainPanel.add(Box.createRigidArea(new Dimension(0, 20)));
 
         JPanel formPanel = new JPanel(new GridBagLayout());
-        formPanel.setBackground(new Color(109, 164, 170));
+        formPanel.setBackground(new Color(118, 231, 130));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(12, 12, 12, 12);
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -47,7 +47,7 @@ public class Login extends JFrame implements ActionListener {
 
         textField = new JTextField(18);
         textField.setFont(new Font("Tahoma", Font.BOLD, 17));
-        textField.setBackground(new Color(255, 179, 0));
+        textField.setBackground(new Color(255, 255, 255));
         gbc.gridx = 1;
         formPanel.add(textField, gbc);
 
@@ -59,7 +59,7 @@ public class Login extends JFrame implements ActionListener {
 
         jPasswordField = new JPasswordField(18);
         jPasswordField.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        jPasswordField.setBackground(new Color(255, 179, 0));
+        jPasswordField.setBackground(new Color(255, 255, 255));
         gbc.gridx = 1;
         formPanel.add(jPasswordField, gbc);
 

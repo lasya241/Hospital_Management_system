@@ -11,7 +11,7 @@ public class update_patient_details extends JFrame {
     update_patient_details() {
         JPanel panel = new JPanel();
         panel.setBounds(5, 5, 940, 490);
-        panel.setBackground(new Color(90, 156, 163));
+        panel.setBackground(new Color(118, 231, 130));
         panel.setLayout(null);
         add(panel);
 
@@ -26,7 +26,7 @@ public class update_patient_details extends JFrame {
         JLabel label1 = new JLabel("Update Patient Details");
         label1.setBounds(124, 11, 300, 25);
         label1.setFont(new Font("Tahoma", Font.BOLD, 20));
-        label1.setForeground(Color.white);
+        label1.setForeground(Color.BLACK);
         panel.add(label1);
 
         // Name

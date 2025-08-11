@@ -25,11 +25,18 @@ public class Reception extends JFrame {
         panel1.setBackground(new Color(118, 231, 130));
         add(panel1);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/dr.png"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/Medical center logo.png"));
         Image image = i1.getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT);
         JLabel label = new JLabel(new ImageIcon(image));
-        label.setBounds(1025, -20, 250, 250);
+        label.setBounds(1300, -60, 250, 250);
         panel1.add(label);
+
+        ImageIcon i11 = new ImageIcon(ClassLoader.getSystemResource("icon/amb.png"));
+        Image image1 = i11.getImage().getScaledInstance(300,100,Image.SCALE_DEFAULT);
+        ImageIcon i22 = new ImageIcon(image1);
+        JLabel label1 = new JLabel(i22);
+        label1.setBounds(970,30,300,100);
+        panel1.add(label1);
 
         JButton btn1 = new JButton("Add New Patient");
         btn1.setBounds(30, 15, 200, 30);
@@ -64,6 +71,7 @@ public class Reception extends JFrame {
         JButton btn7 = new JButton("Update Patient Detail");
         btn7.setBounds(510, 15, 200, 30);
         panel1.add(btn7);
+        btn7.addActionListener(e -> new update_patient_details());
 
         JButton btn8 = new JButton("Hospital Ambulance");
         btn8.setBounds(510, 58, 200, 30);
@@ -73,6 +81,7 @@ public class Reception extends JFrame {
         JButton btn9 = new JButton("Search Room");
         btn9.setBounds(510, 100, 200, 30);
         panel1.add(btn9);
+        btn9.addActionListener(e -> new SearchRoom());
 
         JButton btn10 = new JButton("Log out");
         btn10.setBounds(750, 15, 200, 30);
